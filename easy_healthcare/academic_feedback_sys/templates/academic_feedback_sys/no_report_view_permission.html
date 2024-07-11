@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Access Denied</title>
+    <title>Error - Permission Denied</title>
     <link rel="icon" href="https://i.ibb.co/gDmm74W/academic-feedback-logo.png" type="image/png">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
@@ -16,55 +16,59 @@
         }
 
         body {
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
+            text-align: center;
         }
 
         .container {
-            text-align: center;
-            background-color: #fff;
-            border: 2px solid #ee2727;
-            padding: 20px;
-            border-radius: 10px;
+            background-color: #ffffff;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 40px 60px;
+            max-width: 600px;
         }
 
-        .container h1 {
-            color: #ee2727;
-            margin-bottom: 20px;
+        h1 {
+            color: #FF6347;
+            font-size: 36px;
         }
 
-        .container p {
-            color: #555;
-            margin-bottom: 30px;
+        p {
+            color: #555555;
+            font-size: 18px;
+            line-height: 1.6;
         }
 
-        .home-link {
+        .button {
             display: inline-block;
-            text-decoration: none;
-            color: #fff;
-            background-color: #333;
+            margin-top: 20px;
             padding: 10px 20px;
+            background-color: #FF6347;
+            color: #ffffff;
+            text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
 
-        .home-link:hover {
-            background-color: #555;
+        .button:hover {
+            background-color: #e5533d;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Access Denied</h1>
-        <p>You are not allowed to be here.</p>
-        <a class="home-link" href="{% url 'login' %}">Back to login</a>
+        <h1>403 - No Report View Permission</h1>
+        <p>We're sorry, but the page you requested you are not allowed to view.</p>
+        <p>Please check the URL and try again or go back to the Login page.</p>
+        <a href="{% url 'academic:parent_login' %}" class="button">Back to Login</a>
     </div>
 </body>
 

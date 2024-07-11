@@ -8,13 +8,14 @@
     <script src="https://kit.fontawesome.com/95cc5340fb.js" crossorigin="anonymous"></script>
     <title>{{class_teacher.first_name}} Students</title>
     <link rel="stylesheet" href="{% static './styles/teacher_students.css' %}">
+    <link rel="icon" href="https://i.ibb.co/gDmm74W/academic-feedback-logo.png" type="image/png">
 </head>
 
 <body>
     {% if students %}
         <table class="content-table">
             <div class="container success">
-                <a href="{% url 'academic:staff' %}" class="staff">home</a>
+                <a href="{% url 'academic:staff' %}" class="staff">Home</a>
                 <h1>student list</h1>
             </div>
             <thead>
