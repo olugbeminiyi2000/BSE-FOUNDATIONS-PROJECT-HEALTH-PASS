@@ -1,248 +1,154 @@
 ![Python](https://img.shields.io/badge/Python-48.3%25-brightgreen.svg) ![Django](https://img.shields.io/badge/Django-48.3%25-brightgreen.svg) ![JavaScript](https://img.shields.io/badge/JavaScript-3.3%25-lightgrey.svg) ![pip](https://img.shields.io/badge/pip-43.1%25-brightgreen.svg) ![contributors](https://img.shields.io/badge/contributors-7-orange.svg)
-## Install Python
 
-Django is a Python web framework, thus requiring Python to be installed on your machine. At the time of writing, Python 3.12 is the latest version.
+
+# HealthPass
 
 ## Checkout HealthPass
    - [healthpass](http://trademonastery.pythonanywhere.com/accounts/login/)
 
-### Installation Steps:
+## Your Global Medical ID
 
-1. **Download Python**: 
-   - Go to [Python Downloads Page](https://www.python.org/downloads/).
-   - Click on the download button for the latest Python version.
-   - Download the executable installer.
+---
 
-2. **Run the Installer**:
-   - Run the downloaded installer.
-   - Check the box next to "Install launcher for all users (recommended)".
-   - Click "Install Now" to begin the installation process.
+## Table of Contents
 
-3. **Verify Installation**:
-   - After installation, open the command prompt.
-   - Check that the Python version matches the version you installed by executing:
-     ```
-     py --version
-     ```
+1. [Executive Summary](#executive-summary)
+2. [Introduction](#introduction)
+3. [Problem Statement](#problem-statement)
+4. [Project Objectives](#project-objectives)
+5. [Project Scope](#project-scope)
+6. [Proposed Solution](#proposed-solution)
+7. [Plan](#plan)
+8. [Timeline](#timeline)
 
-   The command should display the installed Python version. If it does, Python has been successfully installed on your machine.
+---
 
-## About pip
+## Executive Summary
 
-pip is a package manager for Python and is included by default with the Python installer. It helps to install and uninstall Python packages (such as Django!). For the rest of the installation, we’ll use pip to install Python packages from the command line.
+HealthPass is a secure web application that provides users with global control and access to their medical information. The HIPAA-compliant platform enables users to:
 
-## Create a Folder called SE_FOUNDATIONS_PROJECT
-```
-mkdir SE_FOUNDATIONS_PROJECT
-```
-## Setting up a virtual environment
+- Manage medical records, medicines, and allergies.
+- Provide temporary access to healthcare providers during emergencies for faster diagnosis and treatment.
+- Share specific information with doctors for consultations, improving healthcare outcomes.
 
-It is best practice to provide a dedicated environment for each Django project you create. There are many options to manage environments and packages within the Python ecosystem, some of which are recommended in the Python documentation. Python itself comes with venv for managing environments which we will use for this guide.
+### Benefits:
 
-To create a virtual environment for your project, open a new command prompt, navigate to the folder where you want to create your project and then enter the following:
+- Improved medical judgments using publicly available data.
+- Reduction in medical errors due to sufficient information.
+- Increased patient empowerment through data ownership and control.
 
-```
-py -m venv healthpass
-```
-This will create a folder called ‘healthpass’ if it does not already exist and set up the virtual environment.
-To activate the environment, run:
-```
-healthpass\Scripts\activate.bat
-```
-The virtual environment will be activated and you’ll see “(healthpass)” next to the command prompt to designate that.
-Each time you start a new command prompt, you’ll need to activate the environment again.
-using this
-```
-healthpass\Scripts\activate.bat
-```
+**Next Steps:** Create a detailed plan for secure data storage, user interface design, and prospective partnerships in the healthcare industry.
 
-## Install Django
+**HealthPass:** Access your health information from anywhere in the world.
 
-Django can be installed easily using pip within your virtual environment.
+---
 
-In the command prompt, ensure your virtual environment is active, and execute the following command:
+## Introduction
 
-```
-py -m pip install Django
-```
-After the installation has completed, you can verify your Django installation by executing the following command in the command prompt:
+### Background Information: Limited Data Hinders Healthcare Progress in Africa
 
-```
-django-admin --version
-```
-## change directory to SE_FOUNDATIONS_PROJECT
-```
-cd SE_FOUNDATIONS_PROJECT
-```
-## clone git hub repo
-```
-git clone https://github.com/eobolo/BSE-FOUNDATIONS-PROJECT-HEALTH-PASS.git
-```
-## change directory to cloned repo
-```
-cd BSE-FOUNDATIONS-PROJECT-HEALTH-PASS
-```
-## install the dependencies
-```
-pip install -r requirements.txt
-```
-## change directory to easy_healthcare
-```
-cd easy_healthcare
-```
-## check if errors are present in the app
-```
-python manage.py check
-```
-## run the django server
-```
-python manage.py runserver
-```
-## now copy this url to your browser
-1. [healthpass](http://127.0.0.1:8000/healthpass/)
-2. [accounts](http://127.0.0.1:8000/accounts/)
-3. [admin](http://127.0.0.1:8000/admin/)
- 
-There you would see a page showing the path you could add
-after the link these paths are the first argument of the
-path function e.g user_signup
+Across Africa and underdeveloped economies, the lack of functional medical record databases significantly hampers effective healthcare delivery. Traditional paper-based systems or fragmented electronic records make accessing crucial patient information difficult for healthcare providers, which impacts:
 
-## Open vscode
-1. Click on New Terminal from the VS Code hamburger menu.
-![alt text](<New Terminal.jpg>)
+- **Emergency Response:** Delays in accessing vital medical information for unconscious patients.
+- **Continuity of Care:** Inefficiencies and treatment duplication due to inaccessible medical history.
+- **Data-Driven Healthcare Development:** Lack of centralized medical data obstructs research and development efforts.
 
+### Impact on Patients and Systems
 
-2. You will see the Powershell terminal by default.
-![alt text](PWRSHLdefault.jpg)
+- **Patient Safety:** Delays in accessing vital medical information can lead to misdiagnosis and life-threatening situations.
+- **Inefficient Healthcare Delivery:** Fragmented records require repetitive data collection, wasting time and resources.
+- **Hindered Public Health Initiatives:** Limited data availability affects outbreak tracking and health trend monitoring.
 
+---
 
-3. Click on the down arrow with the '+' icon and click on Command Prompt to create a new CMD terminal.
-![alt text](CMD.jpg)
+## Problem Statement
 
+A delayed diagnosis during life-threatening situations, particularly in the absence of relevant medical information, can mean the difference between life and death. For example, a tourist injured abroad may face complications if healthcare providers cannot access essential medical information such as blood type, allergies, and pre-existing conditions.
 
-5. Now you have Powershell terminal and then Command Prompt terminal
+### Challenges in the African Demographic:
 
-6. Use the powershell terminal for linux commands and use Command Prompt to run "python manage.py check" and "python manage.py runserver"
+- Lack of standardized medical information systems.
+- Fragmented records with little to no interoperability between healthcare providers.
+- Poor treatment outcomes and increased healthcare system burdens.
 
-For healtpass/ application
-all paths with this <type:parameter> can not be accessed directly from
-the web browser but the html files beside it are connected to them
-check the files and just style them here it this path
-```
-cd SE_FOUNDATIONS_PROJECT\BSE-FOUNDATIONS-PROJECT-HEALTH-PASS\easy_healthcare\healthpass\templates\healthpass
-```
+### Need for a Global Solution:
 
-1. user_signup - django_user.html
-2. user_home - user_home.html
-3. custom_signup - custom_user.html
-4. custom_login - custom_login.html
-5. custom_home - custom_home.html
-6. custom_logout - no html
-7. custom_ban - custom_ban.html
-8. custom_password_reset - custom_password_reset_form.html 
-9. custom_password_reset_done - custom_password_reset_done.html 
-10. custom_reset/<str:uidb64>/<str:token> - custom_reset_confirm_form.html
-11. custom_reset_done - custom_reset_done.html
-12. custom_password_reset_warning - custom_password_reset_warning.html
-13. blood_work_create - bloodwork_form.html
-14. blood_work_read - bloodwork_list.html
-15. blood_work_read_update - bloodwork_updatelist.html
-16. blood_work_update/<int:pk> - bloodwork_form.html
-17. blood_work_read_delete - bloodwork_deletelist.html
-18. blood_work_delete/<int:pk> - bloodwork_confirm_delete.html
-19. general_info_create - generalinfo_form.html
-20. general_info_read - generalinfo_list.html
-21. general_info_read_update - generalinfo_updatelist.html
-22. general_info_update/<int:pk> - generalinfo_form.html
-23. general_info_read_delete - generalinfo_deletelist.html
-24. general_info_delete/<int:pk> - generalinfo_confirm_delete.html
-25. urinalysis_create - urinalysis_form.html
-26. urinalysis_read - urinalysis_list.html
-27. urinalysis_read_update - urinalysis_updatelist.html
-28. urinalysis_update/<int:pk> - urinalysis_form.html
-29. urinalysis_read_delete - urinalysis_deletelist.html
-30. urinalysis_delete/<int:pk> - urinalysis_confirm_delete.html
-31. custom_blood_work_read - custom_bloodwork_list.html
-32. custom_general_info_read - custom_generalinfo_list.html 
-33. custom_urinalysis_read - custom_urinalysis_list.html
+A globally accessible, centralized system that standardizes patient medical information is crucial for bridging existing gaps and enhancing informed decision-making in healthcare delivery.
 
-For accounts/ application
-all paths with this <type:parameter> can not be accessed directly from
-the web browser but the html files beside it are connected to them
-check the files and just style them
-this is the path:
-```
-cd SE_FOUNDATIONS_PROJECT\BSE-FOUNDATIONS-PROJECT-HEALTH-PASS\easy_healthcare\healthpass\templates\registration
-```
-1. login - login.html
-2. logout - no html
-3. password_reset - password_reset_form.html
-4. password_reset/done - password_reset_done.html
-5. reset/<str:uidb64>/<str:token> - password_reset_confirm.html
-6. reset/done - password_reset_complete.html
+---
 
-# Working with the html file, css file and js file
-navigate to this directory
-```
-cd SE_FOUNDATIONS_PROJECT\BSE-FOUNDATIONS-PROJECT-HEALTH-PASS\easy_healthcare\healthpass
-```
-list directories and you would see files and folders
-```
-ls
-```
-then would see static folder, then change directory to it
-```
-cd static
-```
-then inside of static list directories
-```
-ls
-```
-then you would see styles, scripts, and images folder
-put css file in styles folder
-```
-cd styles
-```
-put javascript files in scripts folder
-```
-cd scripts
-```
-put images files in images folder
-```
-cd images
-```
-then move to the folder of the html files you are working on
-```
-cd SE_FOUNDATIONS_PROJECT\BSE-FOUNDATIONS-PROJECT-HEALTH-PASS\easy_healthcare\healthpass\templates\healthpass
-```
-or
-```
-cd SE_FOUNDATIONS_PROJECT\BSE-FOUNDATIONS-PROJECT-HEALTH-PASS\easy_healthcare\healthpass\templates\registration
-```
-In your file put this in the head tag of your html as the first thing before title, meta tags
-```
-{% load static %}
-```
-before calling the style sheet in the link tag, the js in the script tag, and images in the image tag
-```
-<link rel="stylesheet" href="{% static './styles/yourcssscript.css' %}">
-```
-```
-<script src="{% static './scripts/yourjsscript.js' %}"></script>
-```
-```
-<img src="{% static './images/yourimagefile.[jpeg,jpg,png]' %}">
-```
-**then go back to this on cmd not powershell, use cmd on vscode to be running this commands below**
-```
-cd SE_FOUNDATIONS_PROJECT\BSE-FOUNDATIONS-PROJECT-HEALTH-PASS\easy_healthcare
-```
-the run this commands
-```
-python manage.py check
-```
-```
-python manage.py runserver
-```
-then go back to the top of the readme to see what i said you should do after running this commands
-**Use vscode powershell to actually edit the scripts i.e css, js, and html**
+## Project Objectives
+
+1. **Secure Data Storage:** Develop a HIPAA-compliant infrastructure with encryption protocols for data in transit and at rest.
+2. **User-Friendly Interface:** Design an intuitive platform for inputting and managing medical records.
+3. **Healthcare Partnerships:** Establish collaborations with hospitals, clinics, and insurance providers.
+4. **Sustainable Business Model:** Conduct market research to identify revenue streams for long-term viability.
+
+---
+
+## Project Scope
+
+### General Information
+
+HealthPass gathers essential personal and medical information for users:
+
+1. **Personal Information:**
+   - Full Name, Date of Birth, Gender, Nationality, Passport Info, Weight.
+2. **Emergency Contact Information:**
+   - Name, Relationship, Phone Number, Email.
+3. **Medical History:**
+   - Pre-existing Conditions, Allergies, Current Medications, Immunization History, Blood Type, Organ Donor Status, Surgical History.
+4. **Insurance Information:**
+   - Travel Insurance Provider, Policy Number, Emergency Contact.
+5. **Accessibility and Updates:**
+   - Guidance on accessing and updating information for emergencies.
+
+### Blood Tests Overview
+
+- **Haemoglobin Genotypes:** HbAA, HbAS, HbSS, HbSC, HbCC, HbAC.
+- **Blood Types:** A, B, AB, O (+/-).
+- **Other Tests:** Sickling, Malaria Parasite, Hepatitis A/B, HIV, VDRL, H. pylori.
+
+---
+
+## Proposed Solution
+
+### A Secure and Centralized Platform
+
+**Benefits:**
+- **Emergency Response:** Quick access to medical history for first responders.
+- **Continuity of Care:** Comprehensive medical records for informed treatment.
+- **Data-Driven Advancement:** Centralized database supports healthcare research and public health initiatives.
+
+### Target Users:
+
+- **Citizens:** Secure platform for managing records.
+- **Healthcare Providers:** Access to patient information for improved care.
+- **Public Health Authorities:** Aggregated data for monitoring and research.
+
+---
+
+## Plan
+
+### Our Approach
+
+**Team Composition:**
+- **Backend Engineers (3):** Develop REST API, authentication, user roles.
+- **Frontend Engineers (2):** Design responsive user interfaces.
+- **Project Manager (1):** Ensure smooth execution and timely delivery.
+- **QA Engineer (1):** Conduct rigorous testing.
+
+---
+
+## Timeline
+
+1. **Week 1:** Project planning, research, and defining scope.
+2. **Week 2:** Develop secure data storage infrastructure.
+3. **Week 3:** Design user-friendly interfaces.
+4. **Week 4:** Backend development.
+5. **Week 5:** Frontend development.
+6. **Week 6:** Testing and quality assurance.
+---
+
+**HealthPass:** Revolutionizing Africa healthcare through secure and accessible medical records.
+
